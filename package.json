@@ -6,8 +6,14 @@
     "author": "Henjo Hoeksma <henjo@upassist.com>",
     "license": "MIT",
     "scripts": {
+        "release:prerelease": "npx standard-version -t '' -r patch --prerelease && git push --follow-tags",
         "release:patch": "npx standard-version -t '' -r patch && git push --follow-tags",
         "release:minor": "npx standard-version -t '' -r minor && git push --follow-tags",
-        "release:major": "npx standard-version -t '' -r major && git push --follow-tags"
-    }
+        "release:major": "npx standard-version -t '' -r major && git push --follow-tags",
+        "release": "yarn release:patch"
+    },
+    "bugs": {
+        "url": "https://github.com/UpAssist/neos-recaptcha/issues"
+    },
+    "homepage": "https://github.com/UpAssist/neos-recaptcha#readme"
 }
