@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Etopia.RwvNl" source-language="en" datatype="plaintext" target-language="nl">
+        <body>
+            <trans-unit id="ui.label">
+                <source>reCaptcha</source>
+                <target>reCaptcha</target>
+            </trans-unit>
+            <trans-unit id="groups.recaptcha">
+                <source>reCaptcha settings</source>
+                <target>reCaptcha instellingen</target>
+            </trans-unit>
+            <trans-unit id="properties.recaptchaSiteKey">
+                <source>SiteKey</source>
+                <target>SiteKey</target>
+            </trans-unit>
+            <trans-unit id="properties.recaptchaSecret">
+                <source>Secret</source>
+                <target>Secret</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

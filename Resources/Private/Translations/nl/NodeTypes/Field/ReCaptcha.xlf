@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Etopia.RwvNl" source-language="en" datatype="plaintext" target-language="nl">
+        <body>
+            <trans-unit id="ui.label">
+                <source>reCaptcha</source>
+                <target>reCaptcha</target>
+            </trans-unit>
+            <trans-unit id="properties.siteKey">
+                <source>SiteKey (see ?)</source>
+                <target>SiteKey (zie ?)</target>
+            </trans-unit>
+            <trans-unit id="properties.siteKey.ui.help.message">
+                <source>Use this to override the default setting (on the home page properties)</source>
+                <target>Gebruik deze waarde om de waarde ingesteld op de homepagina te overschrijven</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

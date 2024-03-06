@@ -1,0 +1,20 @@
+Neos:
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'UpAssist.Neos.ReCaptcha:Finisher.ReCaptcha':
+            implementationClassName: UpAssist\Neos\ReCaptcha\Form\Finisher\ReCaptchaFinisher
+        formElementTypes:
+          'UpAssist.Neos.ReCaptcha:Field.ReCaptcha':
+            superTypes:
+              'Neos.Form:FormElement': true
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          UpAssist.Neos.ReCaptcha:
+            - '*'
+    fusion:
+      autoInclude:
+        UpAssist.Neos.ReCaptcha: true

@@ -1,0 +1,32 @@
+prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
+    formElementType = 'UpAssist.Neos.ReCaptcha:Field.ReCaptcha'
+}
+prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionRenderer:FormElement) {
+    @context.siteKey = ${element.properties.siteKey ? element.properties.siteKey : q(site).property('recaptchaSiteKey')}
+    label >
+    fieldContainer {
+        field {
+            tagName = 'input'
+            attributes {
+                type = 'hidden'
+                name = ${elementName}
+                value = ${elementValue}
+                id = ${element.uniqueIdentifier}
+            }
+            script = Neos.Fusion:Component {
+                renderer = afx`
+                    <script src={'https://www.google.com/recaptcha/api.js?render=' + element.properties.siteKey}></script>
+                    <script>{"
+                        grecaptcha.ready(function () {
+                            grecaptcha.execute('" + element.properties.siteKey + "', {action: 'submit'}).then(function (token) {
+                                document.getElementById('" + element.uniqueIdentifier + "').value = token;
+                            });
+                        });
+                    "}</script>
+                `
+            }
+            @process.after = ${value + this.script}
+        }
+    }
+
+}

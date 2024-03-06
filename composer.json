@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "upassist/neos-recaptcha",
+    "require": {
+        "neos/flow": "*",
+        "google/recaptcha": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "UpAssist\\Neos\\ReCaptcha\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "UpAssist.Neos.ReCaptcha"
+        }
+    }
+}
