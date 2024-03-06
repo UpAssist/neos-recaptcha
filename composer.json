@@ -1,7 +1,8 @@
 {
-    "description": "",
+    "description": "reCaptcha v3 for nodebased forms",
     "type": "neos-package",
     "name": "upassist/neos-recaptcha",
+    "license": "MIT",
     "require": {
         "neos/flow": "*",
         "google/recaptcha": "*"
