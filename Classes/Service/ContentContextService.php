@@ -42,9 +42,6 @@ class ContentContextService
      */
     public function getContentContext(array $contextProperties = []): ContentContext
     {
-        if ($this->contentContext instanceof ContentContext) {
-            return $this->contentContext;
-        }
 
         $contextPropertiesArray = ['workspaceName' => 'live'];
         $contextProperties = \Neos\Utility\Arrays::arrayMergeRecursiveOverrule($contextPropertiesArray, $contextProperties);
@@ -58,8 +55,7 @@ class ContentContextService
             $contextProperties['currentSite'] = $this->siteRepository->findFirstOnline();
         }
 
-        $this->contentContext = $this->contentContextFactory->create($contextProperties);
-        return $this->contentContext;
+        return $this->contentContextFactory->create($contextProperties);
     }
 
 }

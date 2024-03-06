@@ -27,7 +27,15 @@ class ReCaptchaFinisher extends AbstractFinisher
     {
         $siteNode = $this->contentContextService->getContentContext()->getCurrentSiteNode();
         $values = $this->finisherContext->getFormValues();
+        $formRenderables = $this->finisherContext->getFormRuntime()->getFormDefinition()->getRenderablesRecursively();
+        $recaptchaField = current(array_filter($formRenderables, function($renderable) {
+            return $renderable->getType() === 'UpAssist.Neos.ReCaptcha:Field.ReCaptcha';
+        }));
         $secret = $this->parseOption('secret') ? $this->parseOption('secret') : $siteNode->getProperty('recaptchaSecret');
+
+        if (empty($recaptchaField) || empty($recaptchaField->getIdentifier())) {
+            throw new Exception('A recaptcha field is required');
+        }
 
         if (empty($secret)) {
             throw new Exception('A secret is required');
@@ -35,7 +43,7 @@ class ReCaptchaFinisher extends AbstractFinisher
 
         $recaptcha = new ReCaptcha($secret);
 
-        $resp = $recaptcha->verify($values['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+        $resp = $recaptcha->verify($values[$recaptchaField->getIdentifier()], $_SERVER['REMOTE_ADDR']);
 
         if ($resp->isSuccess()) {
             // Verified! Nothing to do
