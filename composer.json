@@ -16,5 +16,6 @@
         "neos": {
             "package-key": "UpAssist.Neos.ReCaptcha"
         }
-    }
+    },
+    "version": "1.0.1"
 }

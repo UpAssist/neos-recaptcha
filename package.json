@@ -1,6 +1,6 @@
 {
     "name": "upassist-neos-recaptcha",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "repository": "git@github.com:UpAssist/neos-recaptcha.git",
     "author": "Henjo Hoeksma <henjo@upassist.com>",
