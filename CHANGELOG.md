@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/UpAssist/neos-recaptcha/compare/1.0.3...1.1.0) (2026-02-16)
+
+
+### Features
+
+* **finisher:** added configurable threshold option ([6364e66](https://github.com/UpAssist/neos-recaptcha/commit/6364e664830a9d956863ad61e8a161a02bdd2568))
+
 ### [1.0.3](https://github.com/UpAssist/neos-recaptcha/compare/1.0.2...1.0.3) (2024-03-06)
 
 ### [1.0.2](https://github.com/UpAssist/neos-recaptcha/compare/1.0.1...1.0.2) (2024-03-06)
