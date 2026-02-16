@@ -11,6 +11,12 @@
             <trans-unit id="properties.secret.ui.help.message">
                 <source>Use this to override the default setting (on the home page properties)</source>
             </trans-unit>
+            <trans-unit id="properties.threshold">
+                <source>Threshold</source>
+            </trans-unit>
+            <trans-unit id="properties.threshold.ui.help.message">
+                <source>Minimum score to pass validation (0.0 - 1.0), defaults to 0.5. Too much spam coming through? Lower the value by 0.1.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

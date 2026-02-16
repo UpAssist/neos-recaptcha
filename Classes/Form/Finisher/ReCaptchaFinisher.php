@@ -12,6 +12,7 @@ use UpAssist\Neos\ReCaptcha\Service\ContentContextService;
 
 class ReCaptchaFinisher extends AbstractFinisher
 {
+    protected const DEFAULT_THRESHOLD = 0.5;
 
     /**
      * @var ContentContextService $contentContextService
@@ -32,6 +33,8 @@ class ReCaptchaFinisher extends AbstractFinisher
             return $renderable->getType() === 'UpAssist.Neos.ReCaptcha:Field.ReCaptcha';
         }));
         $secret = $this->parseOption('secret') ? $this->parseOption('secret') : $siteNode->getProperty('recaptchaSecret');
+        $thresholdOption = $this->parseOption('threshold');
+        $threshold = is_numeric($thresholdOption) ? (float)$thresholdOption : self::DEFAULT_THRESHOLD;
 
         if (empty($recaptchaField) || empty($recaptchaField->getIdentifier())) {
             throw new Exception('A recaptcha field is required');
@@ -41,7 +44,7 @@ class ReCaptchaFinisher extends AbstractFinisher
             throw new Exception('A secret is required');
         }
 
-        $recaptcha = new ReCaptcha($secret);
+        $recaptcha = (new ReCaptcha($secret))->setScoreThreshold($threshold);
 
         $resp = $recaptcha->verify($values[$recaptchaField->getIdentifier()], $_SERVER['REMOTE_ADDR']);
 

@@ -14,6 +14,14 @@
                 <source>Use this to override the default setting (on the home page properties)</source>
                 <target>Gebruik deze waarde om de waarde ingesteld op de homepagina te overschrijven</target>
             </trans-unit>
+            <trans-unit id="properties.threshold">
+                <source>Threshold</source>
+                <target>Drempelwaarde</target>
+            </trans-unit>
+            <trans-unit id="properties.threshold.ui.help.message">
+                <source>Minimum score to pass validation (0.0 - 1.0), defaults to 0.5. Too much spam coming through? Lower the value by 0.1.</source>
+                <target>Minimale score om validatie te laten slagen (0.0 - 1.0), standaard 0.5. Komt er te veel spam door? Verlaag de waarde met 0.1.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
