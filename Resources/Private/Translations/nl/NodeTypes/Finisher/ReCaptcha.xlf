@@ -6,14 +6,6 @@
                 <source>reCaptcha checker</source>
                 <target>reCaptcha checker</target>
             </trans-unit>
-            <trans-unit id="properties.secret">
-                <source>Secret (see ?)</source>
-                <target>Secret (zie ?)</target>
-            </trans-unit>
-            <trans-unit id="properties.secret.ui.help.message">
-                <source>Use this to override the default setting (on the home page properties)</source>
-                <target>Gebruik deze waarde om de waarde ingesteld op de homepagina te overschrijven</target>
-            </trans-unit>
             <trans-unit id="properties.threshold">
                 <source>Threshold</source>
                 <target>Drempelwaarde</target>

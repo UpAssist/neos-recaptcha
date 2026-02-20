@@ -1,1 +1,13 @@
 include: **/*.fusion
+
+prototype(UpAssist.Neos.ReCaptcha:ApiScript) < prototype(Neos.Fusion:Tag) {
+    @if.hasSiteKey = ${q(site).property('recaptchaSiteKey')}
+    tagName = 'script'
+    attributes.src = ${'https://www.google.com/recaptcha/api.js?render=' + q(site).property('recaptchaSiteKey')}
+}
+
+prototype(Neos.Neos:Page) {
+    body.javascripts.recaptchaApiScript = UpAssist.Neos.ReCaptcha:ApiScript {
+        @position = 'end 900'
+    }
+}

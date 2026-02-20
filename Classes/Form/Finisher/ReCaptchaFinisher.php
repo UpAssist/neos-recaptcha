@@ -2,7 +2,6 @@
 
 namespace UpAssist\Neos\ReCaptcha\Form\Finisher;
 
-use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\ContentRepository\Exception\NodeException;
 use Neos\Flow\Log\Exception;
 use Neos\Form\Core\Model\AbstractFinisher;
@@ -32,7 +31,7 @@ class ReCaptchaFinisher extends AbstractFinisher
         $recaptchaField = current(array_filter($formRenderables, function($renderable) {
             return $renderable->getType() === 'UpAssist.Neos.ReCaptcha:Field.ReCaptcha';
         }));
-        $secret = $this->parseOption('secret') ? $this->parseOption('secret') : $siteNode->getProperty('recaptchaSecret');
+        $secret = $siteNode->getProperty('recaptchaSecret');
         $thresholdOption = $this->parseOption('threshold');
         $threshold = is_numeric($thresholdOption) ? (float)$thresholdOption : self::DEFAULT_THRESHOLD;
 

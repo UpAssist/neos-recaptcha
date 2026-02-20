@@ -1,8 +1,9 @@
 prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     formElementType = 'UpAssist.Neos.ReCaptcha:Field.ReCaptcha'
 }
+
 prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionRenderer:FormElement) {
-    @context.siteKey = ${element.properties.siteKey ? element.properties.siteKey : q(site).property('recaptchaSiteKey')}
+    @context.siteKey = ${q(site).property('recaptchaSiteKey')}
     label >
     fieldContainer {
         field {
@@ -15,7 +16,6 @@ prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionR
             }
             script = Neos.Fusion:Component {
                 renderer = afx`
-                    <script src={'https://www.google.com/recaptcha/api.js?render=' + siteKey}></script>
                     <script>{"
                         grecaptcha.ready(function () {
                             grecaptcha.execute('" + siteKey + "', {action: 'submit'}).then(function (token) {
