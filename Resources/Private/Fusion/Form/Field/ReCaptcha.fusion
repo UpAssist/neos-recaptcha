@@ -3,7 +3,6 @@ prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha.Definition) < prototype(Neos.F
 }
 
 prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionRenderer:FormElement) {
-    @context.siteKey = ${q(site).property('recaptchaSiteKey')}
     label >
     fieldContainer {
         field {
@@ -18,7 +17,7 @@ prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionR
                 renderer = afx`
                     <script>{"
                         grecaptcha.ready(function () {
-                            grecaptcha.execute('" + siteKey + "', {action: 'submit'}).then(function (token) {
+                            grecaptcha.execute('" + q(site).property('recaptchaSiteKey') + "', {action: 'submit'}).then(function (token) {
                                 document.getElementById('" + element.uniqueIdentifier + "').value = token;
                             });
                         });
