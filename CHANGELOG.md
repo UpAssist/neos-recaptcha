@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/UpAssist/neos-recaptcha/compare/1.1.0...1.2.0) (2026-02-20)
+
+
+### Features
+
+* **inclusion:** allow multiple forms with recaptcha validation ([3b54c15](https://github.com/UpAssist/neos-recaptcha/commit/3b54c15bedd1f5b9c58595001b3d8564cdc1972a))
+
 ## [1.1.0](https://github.com/UpAssist/neos-recaptcha/compare/1.0.3...1.1.0) (2026-02-16)
 
 
