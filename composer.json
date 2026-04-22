@@ -1,11 +1,15 @@
 {
-    "description": "reCaptcha v3 for nodebased forms",
+    "description": "reCaptcha v3 for Neos CMS forms (Neos 9+)",
     "type": "neos-package",
     "name": "upassist/neos-recaptcha",
     "license": "MIT",
     "require": {
-        "neos/flow": "*",
-        "google/recaptcha": "*"
+        "php": "^8.2",
+        "neos/flow": "^9.0",
+        "neos/neos": "^9.0",
+        "neos/form": "^6.0",
+        "neos/form-builder": "^3.0",
+        "google/recaptcha": "^1.3"
     },
     "autoload": {
         "psr-4": {
@@ -15,7 +19,10 @@
     "extra": {
         "neos": {
             "package-key": "UpAssist.Neos.ReCaptcha"
+        },
+        "branch-alias": {
+            "dev-main": "2.x-dev",
+            "dev-neos-8": "1.x-dev"
         }
-    },
-    "version": "1.2.1"
+    }
 }

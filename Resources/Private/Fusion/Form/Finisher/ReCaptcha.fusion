@@ -1,3 +1,6 @@
 prototype(UpAssist.Neos.ReCaptcha:Finisher.ReCaptcha.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
     formElementType = 'UpAssist.Neos.ReCaptcha:Finisher.ReCaptcha'
+    options {
+        secret = ${q(site).property('recaptchaSecret')}
+    }
 }

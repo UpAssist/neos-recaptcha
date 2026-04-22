@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/UpAssist/neos-recaptcha/compare/1.2.1...2.0.0) (2026-04-21)
+
+### ⚠ BREAKING CHANGES
+
+* **Neos 9 support.** The 1.x line remains available on the `neos-8` branch for Neos 7/8.
+* **PHP 8.2+** required.
+* Finisher no longer reads `recaptchaSecret` from the site node via the legacy ContentContext API. The shipped Fusion passes `options.secret` from `q(site).property('recaptchaSecret')`. Sites that override `UpAssist.Neos.ReCaptcha:Finisher.ReCaptcha.Definition` in custom Fusion must add `options.secret`.
+* `UpAssist\Neos\ReCaptcha\Service\ContentContextService` removed.
+
+### Features
+
+* drop legacy Neos 8 ContentContext dependency; finisher is now rendering-context-driven
+* modernize to `declare(strict_types=1)` and typed `void` return
+
 ### [1.2.1](https://github.com/UpAssist/neos-recaptcha/compare/1.2.0...1.2.1) (2026-02-20)
 
 ## [1.2.0](https://github.com/UpAssist/neos-recaptcha/compare/1.1.0...1.2.0) (2026-02-20)
