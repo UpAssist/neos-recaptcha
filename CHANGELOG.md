@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/UpAssist/neos-recaptcha/compare/2.0.0...2.0.1) (2026-04-22)
+
+### Bug Fixes
+
+* **field:** guard inline `grecaptcha.ready(...)` call with a polling fallback so the form script no longer throws `ReferenceError: Can't find variable: grecaptcha` when the API script is loaded asynchronously (e.g. `<script async defer>` in head). Waits up to 10s for the global to appear before giving up.
+
 ## [2.0.0](https://github.com/UpAssist/neos-recaptcha/compare/1.2.1...2.0.0) (2026-04-21)
 
 ### ⚠ BREAKING CHANGES

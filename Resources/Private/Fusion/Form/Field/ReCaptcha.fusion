@@ -16,11 +16,24 @@ prototype(UpAssist.Neos.ReCaptcha:Field.ReCaptcha) < prototype(Neos.Form.FusionR
             script = Neos.Fusion:Component {
                 renderer = afx`
                     <script>{"
-                        grecaptcha.ready(function () {
-                            grecaptcha.execute('" + q(site).property('recaptchaSiteKey') + "', {action: 'submit'}).then(function (token) {
-                                document.getElementById('" + element.uniqueIdentifier + "').value = token;
-                            });
-                        });
+                        (function () {
+                            var siteKey = '" + q(site).property('recaptchaSiteKey') + "';
+                            var targetId = '" + element.uniqueIdentifier + "';
+                            function run() {
+                                grecaptcha.ready(function () {
+                                    grecaptcha.execute(siteKey, {action: 'submit'}).then(function (token) {
+                                        document.getElementById(targetId).value = token;
+                                    });
+                                });
+                            }
+                            if (typeof grecaptcha !== 'undefined') { run(); }
+                            else {
+                                var poll = setInterval(function () {
+                                    if (typeof grecaptcha !== 'undefined') { clearInterval(poll); run(); }
+                                }, 50);
+                                setTimeout(function () { clearInterval(poll); }, 10000);
+                            }
+                        })();
                     "}</script>
                 `
             }
