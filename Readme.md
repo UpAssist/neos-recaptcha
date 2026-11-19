@@ -7,7 +7,7 @@ Provides a solution to use reCaptcha v3 in nodebased forms in Neos.
 | Branch   | Supports     | Composer                                          |
 |----------|--------------|---------------------------------------------------|
 | `main`   | Neos 9.0+    | `composer require upassist/neos-recaptcha:^2.0`   |
-| `neos-8` | Neos 7 / 8   | `composer require upassist/neos-recaptcha:^1.2`   |
+| `neos-8` | Neos 8.3+    | `composer require upassist/neos-recaptcha:^1.2`   |
 
 ## Install
 
