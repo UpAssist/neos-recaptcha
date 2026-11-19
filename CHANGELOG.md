@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/UpAssist/neos-recaptcha/compare/1.2.1...1.2.2) (2026-11-19)
+
+### Bug Fixes
+
+* **deps:** replace the `*` constraints with the tested range (`neos/neos: ^8.3`) and require the packages the code uses: `neos/neos`, `neos/form`, `neos/form-builder` and `neos/form-fusionrenderer` (the field extends `Neos.Form.FusionRenderer:FormElement`; the form must use the `fusion` preset). Neos 7 is no longer supported.
+* **field:** guard inline `grecaptcha.ready(...)` so it tolerates an async-loaded `api.js` (backport of 2.0.1).
+
 ### [1.2.1](https://github.com/UpAssist/neos-recaptcha/compare/1.2.0...1.2.1) (2026-02-20)
 
 ## [1.2.0](https://github.com/UpAssist/neos-recaptcha/compare/1.1.0...1.2.0) (2026-02-20)
