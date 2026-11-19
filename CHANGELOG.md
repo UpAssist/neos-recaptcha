@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/UpAssist/neos-recaptcha/compare/2.0.1...2.0.2) (2026-11-19)
+
+### Bug Fixes
+
+* **deps:** require `neos/form-fusionrenderer`. The reCaptcha field extends `Neos.Form.FusionRenderer:FormElement`; without the package, rendering a form with the field fails. The form must use the `fusion` preset.
+
 ### [2.0.1](https://github.com/UpAssist/neos-recaptcha/compare/2.0.0...2.0.1) (2026-04-22)
 
 ### Bug Fixes
