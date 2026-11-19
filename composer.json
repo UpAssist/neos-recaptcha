@@ -9,6 +9,7 @@
         "neos/neos": "^9.0",
         "neos/form": "^6.0",
         "neos/form-builder": "^3.0",
+        "neos/form-fusionrenderer": "^2.3",
         "google/recaptcha": "^1.3"
     },
     "autoload": {
