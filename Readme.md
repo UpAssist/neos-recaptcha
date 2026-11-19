@@ -14,7 +14,8 @@ Make sure to register at https://www.google.com/recaptcha.
 
 ## Usage
 
-Add a reCaptcha field to your form.
+Add a reCaptcha field to your form. The field is rendered by `neos/form-fusionrenderer`, so the form must use the
+`fusion` preset (`presetName = 'fusion'`).
 Add the reCaptcha finisher as first finisher to your finishers. If the reCaptcha fails, the other finishers won't be
 executed anymore.
 The finisher has a `threshold` option (default `0.5`) that you can change in the Neos inspector.
